@@ -55,7 +55,7 @@ void* messageListener(void *arg) {
     struct message incoming_msg;
     char fifo_name[50];
 
-    int user = open(uName, O_WRONLY);
+    int user = open(uName, O_RDONLY);
     
     while (1) {
         if (read(user, &incoming_msg, sizeof(struct message)) != sizeof(struct message)) {
